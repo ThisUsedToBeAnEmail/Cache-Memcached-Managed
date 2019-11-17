@@ -1986,7 +1986,7 @@ L<"directory server">.  It should either be:
  - blessed object adhering to the Cache::Memcached API
 
 If this field is not specified, the L<"data server"> object will be assumed.
-The blessed object can later be obtained with the L<directory> method.
+The blessed object can later be obtained with the L</directory> method.
 
 =item expiration
 
@@ -2002,9 +2002,9 @@ can be specified:
  - W weeks
 
 The default default expiration is one day ('1D').  The default expiration will
-be used whenever no expiration has been specified with L<add>, L<decr>,
-L<incr>, L<replace> or L<set>.  The default expiration can be obtained
-with the L<expiration> method.
+be used whenever no expiration has been specified with L</add>, L</decr>,
+L</incr>, L</replace> or L</set>.  The default expiration can be obtained
+with the L</expiration> method.
 
 =item flush_interval
 
@@ -2091,7 +2091,7 @@ The following object methods are available (in alphabetical order):
             );
 
 Add a value to the cache, but only if it doesn't exist yet.  Otherwise the
-same as L<set>.
+same as L</set>.
 
 =head2 data
 
@@ -2128,11 +2128,11 @@ were found for each memcached server.
              );
 
 Decrement a value to the cache, but only if it already exists.  Otherwise the
-same as L<set>.  Default for value is B<1>.
+same as L</set>.  Default for value is B<1>.
 
 Please note that any L<group|"group management"> associations will B<never>
 be honoured: it is assumed they would be all the same for all calls to this
-counter and are therefore set only with L<set>, L<add> or L<incr>.
+counter and are therefore set only with L</set>, L</add> or L</incr>.
 
 =head2 delete
 
@@ -2155,7 +2155,7 @@ input parameters given).  If called with unnamed parameters, then they are:
 =item 1 id
 
 The L<ID> to be used to identify the value to be deleted.  Defaults to no ID
-(then uses L<key> only).
+(then uses L</key> only).
 
 =back
 
@@ -2166,7 +2166,7 @@ When using named parameters, the following names can be specified:
 =item id
 
 The L<ID> to be used to identify the value to be deleted.  Defaults to no ID
-(then uses L<key> only).
+(then uses L</key> only).
 
 =item key
 
@@ -2176,7 +2176,7 @@ default key (as determined by the caller environment).
 =item version
 
 The L<version> to be used to identify the value to be deleted.  Defaults to
-the version associated with the L<key>.
+the version associated with the L</key>.
 
 =item namespace
 
@@ -2230,7 +2230,7 @@ Returns the default expiration as (implicitly) specified with L<new>.
 
 Initialize contents of all of the memcached backend servers of the
 L<"data server">.  The input parameter specifies interval between flushes
-of backend memcached servers, default is the L<flush_interval> value
+of backend memcached servers, default is the L</flush_interval> value
 implicitly) specified with L<new>.  Returns whether all memcached L<servers>
 were successfully flushed.
 
@@ -2245,7 +2245,7 @@ flush_all functionality.
 
  my $interval = $cache->flush_interval;
 
-Returns the default flush interval values used with L<flush_all>, as
+Returns the default flush interval values used with L</flush_all>, as
 (implicitly) specified with L<new>.
 
 =head2 get
@@ -2269,7 +2269,7 @@ these are:
 =item 1 id
 
 The L<ID> to be used to identify the value to be fetched.  Defaults to no ID
-(then uses the default L<key> only).
+(then uses the default L</key> only).
 
 =back
 
@@ -2280,21 +2280,21 @@ When using named parameters, the following names can be specified:
 =item id
 
 The L<ID> to be used to identify the value to be fetched.  Defaults to no ID
-(then uses L<key> only).
+(then uses L</key> only).
 
 =item key
 
-The L<key> to be used to identify the value to be fetched.  Defaults to the
+The L</key> to be used to identify the value to be fetched.  Defaults to the
 default key (as determined by the caller environment).
 
 =item version
 
 The L<version> to be used to identify the value to be deleted.  Defaults to
-the version associated with the L<key>.
+the version associated with the L</key>.
 
 =item namespace
 
-The L<namespace> to be used to identify the value to be deleted.  Defaults to
+The L</namespace> to be used to identify the value to be deleted.  Defaults to
 the default namespace associated with the object.
 
 =back
@@ -2490,11 +2490,11 @@ Obtain the default namespace, as (implicitly) specified with L<new>.
                 );
 
 Replace a value to the cache, but only if it already exists.  Otherwise the
-same as L<set>.
+same as L</set>.
 
 Please note that any L<group|"group management"> associations will B<never>
 be honoured: it is assumed they would be all the same for all calls to this
-counter and are therefore set only with L<set>, L<add> or L<incr>.
+counter and are therefore set only with L</set>, L</add> or L</incr>.
 
 =head2 reset
 
@@ -2555,7 +2555,7 @@ L<key> only).
 =item 3 expiration
 
 The expiration of the value.  Defaults to the value as specified with
-L<expiration> for the L<key>.
+L</expiration> for the L</key>.
 
 =back
 
@@ -2575,7 +2575,7 @@ See L<"expiration specification"> for more ways to set expiration.
 =item id
 
 The L<ID> to be used to identify the value.  Defaults to no ID (then uses
-L<key> only).
+L</key> only).
 
 =item key
 
@@ -2596,7 +2596,7 @@ The value to set in the cache.  Defaults to C<undef>.
 =item version
 
 The L<version> to be used to identify the value to be set.  Defaults to
-the version associated with the L<key>.
+the version associated with the L</key>.
 
 =back
 
